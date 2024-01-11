@@ -54,19 +54,22 @@ function showNotes() {
 }
 // Function to Delete Note.
 function deleteNote(index) {
-    confirm("Are You sure You Wants to Delete This NOte?");
-    let addtext = document.getElementById("addtext");
-    let notes = localStorage.getItem("notes");
-    if (notes == null) {
-        notesObj = [];
-
-    } else {
-        notesObj = JSON.parse(notes);
-    }
-    notesObj.splice(index, 1);
-    localStorage.setItem("notes", JSON.stringify(notesObj));
-    showNotes();
+    const userCinfirmed = confirm("Are You sure You Wants to Delete This Note?");
+        if(userConfirmed){
+        let addtext = document.getElementById("addtext");
+        let notes = localStorage.getItem("notes");
+        if (notes == null) {
+            notesObj = [];
+    
+        } else {
+            notesObj = JSON.parse(notes);
+        }
+        notesObj.splice(index, 1);
+        localStorage.setItem("notes", JSON.stringify(notesObj));
+        showNotes();
 }
+}
+    
 let search = document.getElementById('search');
 search.addEventListener('input', function() {
     let inputValue = search.value
