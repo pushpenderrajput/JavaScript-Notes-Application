@@ -55,7 +55,7 @@ function showNotes() {
 // Function to Delete Note.
 function deleteNote(index) {
     const userConfirmed = confirm("Are You sure You Want to Delete This Note?");
-        if(userConfirmed){
+        if(userConfirmed == true){
         let addtext = document.getElementById("addtext");
         let notes = localStorage.getItem("notes");
         if (notes == null) {
